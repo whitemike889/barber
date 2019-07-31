@@ -345,20 +345,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#companion-object-functions" title="Companion Object Functions" class="md-nav__link">
-    Companion Object Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inheritors" title="Inheritors" class="md-nav__link">
-    Inheritors
-  </a>
-  
-</li>
-      
       
       
       
@@ -381,6 +367,10 @@
                 <p><a href="../../">barber</a> / <a href="../">app.cash.barber</a> / <a href="./">LocaleResolver</a></p>
 <h1 id="localeresolver">LocaleResolver<a class="headerlink" href="#localeresolver" title="Permanent link">&para;</a></h1>
 <p><code>interface LocaleResolver</code></p>
+<p>Chooses which locale to use given an inventory of available templates. This class is responsible
+for making difficult policy decisions around which text to show which customers.</p>
+<p>For example, it may need to decide how to satisfy a request for es-US (Spanish in the USA) given
+templates for es-ES (Spanish in Spain) and en-US (English in the USA).</p>
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -392,37 +382,7 @@
 <tbody>
 <tr>
 <td><a href="resolve/">resolve</a></td>
-<td><code>abstract fun resolve(locale:</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>, options:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><code>Set</code></a><code>&lt;</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>&gt;):</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="companion-object-functions">Companion Object Functions<a class="headerlink" href="#companion-object-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="resolve-entry/">resolveEntry</a></td>
-<td><code>fun &lt;T&gt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>,</code><a href="resolve-entry/#T"><code>T</code></a><code>?&gt;.resolveEntry(localeResolver:</code><a href="./"><code>LocaleResolver</code></a><code>, locale:</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>):</code><a href="resolve-entry/#T"><code>T</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="inheritors">Inheritors<a class="headerlink" href="#inheritors" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-match-or-first-locale-resolver/">MatchOrFirstLocaleResolver</a></td>
-<td><code>class MatchOrFirstLocaleResolver :</code><a href="./"><code>LocaleResolver</code></a></td>
+<td><code>abstract fun resolve(locale:</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>, options:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><code>Set</code></a><code>&lt;</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>&gt;):</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><br><code>open fun &lt;T&gt; resolve(locale:</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>, map:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>,</code><a href="resolve/#T"><code>T</code></a><code>?&gt;):</code><a href="resolve/#T"><code>T</code></a></td>
 </tr>
 </tbody>
 </table>

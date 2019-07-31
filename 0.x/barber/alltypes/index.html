@@ -375,11 +375,11 @@
 <tbody>
 <tr>
 <td><a href="../app.cash.barber/-barber/">app.cash.barber.Barber</a></td>
-<td></td>
+<td>Uses a template to turn document datas into a rendered document.</td>
 </tr>
 <tr>
 <td><a href="../app.cash.barber/-barber-exception/">app.cash.barber.BarberException</a></td>
-<td></td>
+<td>An error, typically presented at application startup, that describes an inconsistency between the input document data types, the templates, and the target document types.</td>
 </tr>
 <tr>
 <td><a href="../app.cash.barber.models/-barber-key/">app.cash.barber.models.BarberKey</a></td>
@@ -387,7 +387,7 @@
 </tr>
 <tr>
 <td><a href="../app.cash.barber/-barbershop/">app.cash.barber.Barbershop</a></td>
-<td>Holds validated elements that have eagerly built Barbers between type <a href="../app.cash.barber.models/-document-data/">DocumentData</a> and <a href="../app.cash.barber.models/-document/">Document</a></td>
+<td>A registry of templates with their input document data types and their output document types.</td>
 </tr>
 <tr>
 <td><a href="../app.cash.barber/-barbershop-builder/">app.cash.barber.BarbershopBuilder</a></td>
@@ -419,15 +419,7 @@
 </tr>
 <tr>
 <td><a href="../app.cash.barber/-locale-resolver/">app.cash.barber.LocaleResolver</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../app.cash.barber/-match-or-first-locale-resolver/">app.cash.barber.MatchOrFirstLocaleResolver</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../app.cash.barber/-real-barber/">app.cash.barber.RealBarber</a></td>
-<td></td>
+<td>Chooses which locale to use given an inventory of available templates. This class is responsible for making difficult policy decisions around which text to show which customers.</td>
 </tr>
 </tbody>
 </table>

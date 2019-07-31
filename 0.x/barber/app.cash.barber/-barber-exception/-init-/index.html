@@ -351,15 +351,21 @@
                 <p><a href="../../../">barber</a> / <a href="../../">app.cash.barber</a> / <a href="../">BarberException</a> / <a href="./">&lt;init&gt;</a></p>
 <h1 id="init">&lt;init&gt;<a class="headerlink" href="#init" title="Permanent link">&para;</a></h1>
 <p><code>BarberException(problems:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;)</code></p>
-<p><strong>Return</strong></p>
-<p>problems: a list of Strings describing the error
-Can point to multiple problems</p>
-<p>Example
-|output field &lsquo;subject&rsquo; uses &lsquo;totally_invalid_field&rsquo; but &lsquo;RecipientReceipt&rsquo; has no such field
-|  {sender} sent you {totally_invalid_field}
-|  valid fields are: sender, amount, cancelUrl, deposit_expected_at</p>
-<p>TODO make exceptions typed so the above example could be parsed by a client and show rich feedback
-for DocumentTemplate writers</p>
+<p>An error, typically presented at application startup, that describes an inconsistency between the
+input document data types, the templates, and the target document types.</p>
+<p>For example this exception is raised if a document data lacks an input field that a template
+expects, or if a template lacks an output field that a document expects.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span>Problems
+1) Attempted to install DocumentTemplate with a DocumentData not specified in the DocumentTemplate source.
+DocumentTemplate.source: class app.cash.barber.examples.RecipientReceipt
+DocumentData: class app.cash.barber.examples.SenderReceipt
+
+2) Missing variable [sender] in DocumentData [class app.cash.barber.examples.SenderReceipt] for DocumentTemplate field [{{sender}} sent you {{amount}}. It will be available at {{ deposit_expected_at }}. Cancel here: {{ cancelUrl }}]
+
+3) Unused DocumentData variable [recipient] in [class app.cash.barber.examples.SenderReceipt] with no usage in installed DocumentTemplate Locales:
+[Locale=en-US]
+</pre></div>
                 
                   
                 

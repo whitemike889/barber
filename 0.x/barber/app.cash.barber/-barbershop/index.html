@@ -381,7 +381,7 @@
                 <p><a href="../../">barber</a> / <a href="../">app.cash.barber</a> / <a href="./">Barbershop</a></p>
 <h1 id="barbershop">Barbershop<a class="headerlink" href="#barbershop" title="Permanent link">&para;</a></h1>
 <p><code>interface Barbershop</code></p>
-<p>Holds validated elements that have eagerly built Barbers between type <a href="../../app.cash.barber.models/-document-data/">DocumentData</a> and <a href="../../app.cash.barber.models/-document/">Document</a></p>
+<p>A registry of templates with their input document data types and their output document types.</p>
 <h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -408,7 +408,7 @@
 <tbody>
 <tr>
 <td><a href="get-all-barbers/">getAllBarbers</a></td>
-<td><code>abstract fun getAllBarbers():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="../../app.cash.barber.models/-barber-key/"><code>BarberKey</code></a><code>,</code><a href="../-barber/"><code>Barber</code></a><code>&lt;</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>,</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;&gt;</code></td>
+<td><code>abstract fun getAllBarbers():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="../../app.cash.barber.models/-barber-key/"><code>BarberKey</code></a><code>,</code><a href="../-barber/"><code>Barber</code></a><code>&lt;*, *&gt;&gt;</code></td>
 </tr>
 <tr>
 <td><a href="get-barber/">getBarber</a></td>

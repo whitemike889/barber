@@ -345,13 +345,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#inheritors" title="Inheritors" class="md-nav__link">
-    Inheritors
-  </a>
-  
-</li>
-      
       
       
       
@@ -373,7 +366,8 @@
                 
                 <p><a href="../../">barber</a> / <a href="../">app.cash.barber</a> / <a href="./">Barber</a></p>
 <h1 id="barber">Barber<a class="headerlink" href="#barber" title="Permanent link">&para;</a></h1>
-<p><code>interface Barber&lt;C :</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;</code></p>
+<p><code>interface Barber&lt;DD :</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;</code></p>
+<p>Uses a template to turn document datas into a rendered document.</p>
 <h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -385,22 +379,7 @@
 <tbody>
 <tr>
 <td><a href="render/">render</a></td>
-<td><code>abstract fun render(documentData:</code><a href="./#C"><code>C</code></a><code>, locale:</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>):</code><a href="./#D"><code>D</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="inheritors">Inheritors<a class="headerlink" href="#inheritors" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-real-barber/">RealBarber</a></td>
-<td><code>class RealBarber&lt;C :</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt; :</code><a href="./"><code>Barber</code></a><code>&lt;</code><a href="../-real-barber/#C"><code>C</code></a><code>,</code><a href="../-real-barber/#D"><code>D</code></a><code>&gt;</code></td>
+<td><code>abstract fun render(documentData:</code><a href="./#DD"><code>DD</code></a><code>, locale:</code><a href="../../app.cash.barber.models/-locale/"><code>Locale</code></a><code>):</code><a href="./#D"><code>D</code></a></td>
 </tr>
 </tbody>
 </table>

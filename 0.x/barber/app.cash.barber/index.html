@@ -467,11 +467,11 @@
 <tbody>
 <tr>
 <td><a href="-barber/">Barber</a></td>
-<td><code>interface Barber&lt;C :</code><a href="../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;</code></td>
+<td><code>interface Barber&lt;DD :</code><a href="../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;</code><br>Uses a template to turn document datas into a rendered document.</td>
 </tr>
 <tr>
 <td><a href="-barbershop/">Barbershop</a></td>
-<td><code>interface Barbershop</code><br>Holds validated elements that have eagerly built Barbers between type <a href="../app.cash.barber.models/-document-data/">DocumentData</a> and <a href="../app.cash.barber.models/-document/">Document</a></td>
+<td><code>interface Barbershop</code><br>A registry of templates with their input document data types and their output document types.</td>
 </tr>
 <tr>
 <td><a href="-barbershop-builder/">BarbershopBuilder</a></td>
@@ -479,15 +479,7 @@
 </tr>
 <tr>
 <td><a href="-locale-resolver/">LocaleResolver</a></td>
-<td><code>interface LocaleResolver</code></td>
-</tr>
-<tr>
-<td><a href="-match-or-first-locale-resolver/">MatchOrFirstLocaleResolver</a></td>
-<td><code>class MatchOrFirstLocaleResolver :</code><a href="-locale-resolver/"><code>LocaleResolver</code></a></td>
-</tr>
-<tr>
-<td><a href="-real-barber/">RealBarber</a></td>
-<td><code>class RealBarber&lt;C :</code><a href="../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt; :</code><a href="-barber/"><code>Barber</code></a><code>&lt;</code><a href="-real-barber/#C"><code>C</code></a><code>,</code><a href="-real-barber/#D"><code>D</code></a><code>&gt;</code></td>
+<td><code>interface LocaleResolver</code><br>Chooses which locale to use given an inventory of available templates. This class is responsible for making difficult policy decisions around which text to show which customers.</td>
 </tr>
 </tbody>
 </table>
@@ -502,7 +494,7 @@
 <tbody>
 <tr>
 <td><a href="-barber-exception/">BarberException</a></td>
-<td><code>class BarberException :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html"><code>IllegalStateException</code></a></td>
+<td><code>class BarberException :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html"><code>IllegalStateException</code></a><br>An error, typically presented at application startup, that describes an inconsistency between the input document data types, the templates, and the target document types.</td>
 </tr>
 </tbody>
 </table>
