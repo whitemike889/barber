@@ -373,7 +373,7 @@
                 
                 <p><a href="../../">barber</a> / <a href="../">app.cash.barber</a> / <a href="./">BarbershopBuilder</a></p>
 <h1 id="barbershopbuilder">BarbershopBuilder<a class="headerlink" href="#barbershopbuilder" title="Permanent link">&para;</a></h1>
-<p><code>class BarbershopBuilder :</code><a href="../-barbershop/-builder/"><code>Builder</code></a></p>
+<p><code>class BarbershopBuilder :</code><a href="../-barbershop/-builder/"><code>Barbershop.Builder</code></a></p>
 <h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -412,7 +412,11 @@
 </tr>
 <tr>
 <td><a href="set-locale-resolver/">setLocaleResolver</a></td>
-<td><code>fun setLocaleResolver(resolver:</code><a href="../-locale-resolver/"><code>LocaleResolver</code></a><code>):</code><a href="../-barbershop/-builder/"><code>Builder</code></a><br>Configures this barbershop to use <a href="../-locale-resolver/">LocaleResolver</a> to map requested locales to available templates. By default Barber does an exact match, and if nothing matches it uses the first installed template.</td>
+<td><code>fun setLocaleResolver(resolver:</code><a href="../-locale-resolver/"><code>LocaleResolver</code></a><code>):</code><a href="../-barbershop/-builder/"><code>Barbershop.Builder</code></a><br>Configures this barbershop to use <a href="../-locale-resolver/">LocaleResolver</a> to map requested locales to available templates. By default Barber does an exact match, and if nothing matches it uses the first installed template.</td>
+</tr>
+<tr>
+<td><a href="set-warnings-as-errors/">setWarningsAsErrors</a></td>
+<td><code>fun setWarningsAsErrors():</code><a href="../-barbershop/-builder/"><code>Barbershop.Builder</code></a><br>Configures this barbershop to treat warnings as errors during validataion. By default, only errors, not warnings, lead to fatal BarberException during validation.</td>
 </tr>
 </tbody>
 </table>

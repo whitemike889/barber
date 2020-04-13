@@ -382,8 +382,24 @@
 <td>An error, typically presented at application startup, that describes an inconsistency between the input document data types, the templates, and the target document types.</td>
 </tr>
 <tr>
+<td><a href="../app.cash.barber.models/-barber-field/">app.cash.barber.models.BarberField</a></td>
+<td>Document fields annotated will be rendered with a <a href="#">MustacheFactory</a> corresponding to the <a href="../app.cash.barber.models/-barber-field-encoding/">BarberFieldEncoding</a>.</td>
+</tr>
+<tr>
+<td><a href="../app.cash.barber.models/-barber-field-encoding/">app.cash.barber.models.BarberFieldEncoding</a></td>
+<td>Used in <a href="../app.cash.barber.models/-barber-field/">BarberField</a> annotation on Document fields to specify the encoding to render using.</td>
+</tr>
+<tr>
 <td><a href="../app.cash.barber.models/-barber-key/">app.cash.barber.models.BarberKey</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="../app.cash.barber/-barber-mustache-factory-provider/">app.cash.barber.BarberMustacheFactoryProvider</a></td>
+<td>Provides a MustacheFactory depending on the <a href="../app.cash.barber.models/-barber-field-encoding/">BarberFieldEncoding</a> of the <a href="../app.cash.barber.models/-document/">Document</a> field</td>
+</tr>
+<tr>
+<td><a href="../app.cash.barber/-barber-plaintext-mustache-factory/">app.cash.barber.BarberPlaintextMustacheFactory</a></td>
+<td>Mustache Factory that handles <a href="../app.cash.barber.models/-barber-field-encoding/-s-t-r-i-n-g_-p-l-a-i-n-t-e-x-t/">STRING_PLAINTEXT</a> fields and doesn&rsquo;t apply the HTML escaping present in <a href="#">DefaultMustacheFactory</a></td>
 </tr>
 <tr>
 <td><a href="../app.cash.barber/-barbershop/">app.cash.barber.Barbershop</a></td>

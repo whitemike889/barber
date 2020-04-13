@@ -408,7 +408,7 @@ DocumentData: class app.cash.barber.examples.SenderReceipt
 <tbody>
 <tr>
 <td><a href="-init-/">&lt;init&gt;</a></td>
-<td><code>BarberException(problems:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;)</code><br>An error, typically presented at application startup, that describes an inconsistency between the input document data types, the templates, and the target document types.</td>
+<td><code>BarberException(errors:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt; = listOf(), warnings:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt; = listOf())</code><br>An error, typically presented at application startup, that describes an inconsistency between the input document data types, the templates, and the target document types.</td>
 </tr>
 </tbody>
 </table>
@@ -422,8 +422,12 @@ DocumentData: class app.cash.barber.examples.SenderReceipt
 </thead>
 <tbody>
 <tr>
-<td><a href="problems/">problems</a></td>
-<td><code>val problems:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;</code></td>
+<td><a href="errors/">errors</a></td>
+<td><code>val errors:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;</code></td>
+</tr>
+<tr>
+<td><a href="warnings/">warnings</a></td>
+<td><code>val warnings:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;</code></td>
 </tr>
 </tbody>
 </table>

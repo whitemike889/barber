@@ -414,6 +414,14 @@
 <td><a href="get-barber/">getBarber</a></td>
 <td><code>abstract fun &lt;DD :</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt; getBarber(documentDataClass:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="get-barber/#DD"><code>DD</code></a><code>&gt;, documentClass:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="get-barber/#D"><code>D</code></a><code>&gt;):</code><a href="../-barber/"><code>Barber</code></a><code>&lt;</code><a href="get-barber/#DD"><code>DD</code></a><code>,</code><a href="get-barber/#D"><code>D</code></a><code>&gt;</code></td>
 </tr>
+<tr>
+<td><a href="get-target-documents/">getTargetDocuments</a></td>
+<td><code>abstract fun &lt;DD :</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>&gt; getTargetDocuments(documentDataClass:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="get-target-documents/#DD"><code>DD</code></a><code>&gt;):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><code>Set</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;&gt;</code></td>
+</tr>
+<tr>
+<td><a href="get-warnings/">getWarnings</a></td>
+<td><code>abstract fun getWarnings():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;</code></td>
+</tr>
 </tbody>
 </table>
 <h3 id="extension-functions">Extension Functions<a class="headerlink" href="#extension-functions" title="Permanent link">&para;</a></h3>
@@ -428,6 +436,10 @@
 <tr>
 <td><a href="../get-barber/">getBarber</a></td>
 <td><code>fun &lt;DD :</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>, D :</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;</code><a href="./"><code>Barbershop</code></a><code>.getBarber():</code><a href="../-barber/"><code>Barber</code></a><code>&lt;</code><a href="../get-barber/#DD"><code>DD</code></a><code>,</code><a href="../get-barber/#D"><code>D</code></a><code>&gt;</code></td>
+</tr>
+<tr>
+<td><a href="../get-target-documents/">getTargetDocuments</a></td>
+<td><code>fun &lt;DD :</code><a href="../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>&gt;</code><a href="./"><code>Barbershop</code></a><code>.getTargetDocuments():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><code>Set</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;&gt;</code></td>
 </tr>
 </tbody>
 </table>

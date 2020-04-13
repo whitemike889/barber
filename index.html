@@ -381,8 +381,12 @@
 </blockquote>
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
 <p>To get started using Barber, skim below to understand the different elements used to safely render your localized, fillable, themed documents using <a href="https://mustache.github.io">Mustache</a> templating.</p>
-<h3 id="gradlemaven-artifact">Gradle/Maven Artifact<a class="headerlink" href="#gradlemaven-artifact" title="Permanent link">&para;</a></h3>
-<p>Barber is not yet published publicly. API is subject to change.</p>
+<h1 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h1>
+<p>Our <a href="http://cashapp.github.io/barber/changelog/">change log</a> has release history. API is subject to change. </p>
+<div class="codehilite"><pre><span></span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;app.cash.barber:barber:0.1.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p>Snapshot builds are <a href="https://oss.sonatype.org/content/repositories/snapshots/">available</a>.</p>
 <h2 id="documentdata">DocumentData<a class="headerlink" href="#documentdata" title="Permanent link">&para;</a></h2>
 <p>DocumentData is the data that is used to render a template. In Barber, this is defined as a data class making it easy to use in Kotlin. </p>
 <div class="codehilite"><pre><span></span><span class="c1">// Define DocumentData</span>
@@ -494,6 +498,31 @@
 <span class="k">val</span> <span class="py">renderedSms</span> <span class="p">=</span> <span class="n">recipientReceiptSms</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">sandy50Receipt</span><span class="p">,</span> <span class="n">EN_US</span><span class="p">)</span>
 </pre></div>
 
+<h2 id="barberfield-barberfieldencoding-and-html-character-escaping">@BarberField, BarberFieldEncoding, and HTML Character Escaping<a class="headerlink" href="#barberfield-barberfieldencoding-and-html-character-escaping" title="Permanent link">&para;</a></h2>
+<p>The <code>@BarberField</code> annotation can be used on Document class <code>val</code> fields to declare that the field should be rendered and treated according to a specific <code>BarberFieldEncoding</code>.</p>
+<p><code>BarberFieldEncoding</code> can be for now <code>STRING_HTML</code> or <code>STRING_PLAINTEXT</code>. </p>
+<p>By default, all fields are treated as <code>STRING_HTML</code> and have common HTML escaping of characters for safety. </p>
+<p>When a field is annotated as <code>STRING_PLAINTEXT</code>, characters will not be escaped.</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">EncodingTestDocument</span><span class="p">(</span>
+  <span class="k">val</span> <span class="py">no_annotation_field</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+  <span class="n">@BarberField</span><span class="p">()</span>
+  <span class="k">val</span> <span class="py">default_field</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+  <span class="n">@BarberField</span><span class="p">(</span><span class="n">encoding</span> <span class="p">=</span> <span class="n">BarberFieldEncoding</span><span class="p">.</span><span class="n">STRING_HTML</span><span class="p">)</span>
+  <span class="k">val</span> <span class="py">html_field</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+  <span class="n">@BarberField</span><span class="p">(</span><span class="n">encoding</span> <span class="p">=</span> <span class="n">BarberFieldEncoding</span><span class="p">.</span><span class="n">STRING_PLAINTEXT</span><span class="p">)</span>
+  <span class="k">val</span> <span class="py">plaintext_field</span><span class="p">:</span> <span class="n">String</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">Document</span>
+
+<span class="c1">// Rendered with all fields set to `You purchased 100 shares of McDonald&#39;s.`</span>
+<span class="n">EncodingTestDocument</span><span class="p">(</span>
+    <span class="n">no_annotation_field</span> <span class="p">=</span> <span class="s">&quot;You purchased 100 shares of McDonald&amp;#39;s.&quot;</span><span class="p">,</span>
+    <span class="n">default_field</span> <span class="p">=</span> <span class="s">&quot;You purchased 100 shares of McDonald&amp;#39;s.&quot;</span><span class="p">,</span>
+    <span class="n">html_field</span> <span class="p">=</span> <span class="s">&quot;You purchased 100 shares of McDonald&amp;#39;s.&quot;</span><span class="p">,</span>
+    <span class="c1">// Note: no character escaping on the plaintext field</span>
+    <span class="n">plaintext_field</span> <span class="p">=</span> <span class="s">&quot;You purchased 100 shares of McDonald&#39;s.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+
 <h2 id="locale">Locale<a class="headerlink" href="#locale" title="Permanent link">&para;</a></h2>
 <p>Barber supports installation and resolution of multiple Locales for each <code>DocumentTemplate</code>.</p>
 <p>All Locale versions of a DocumentTemplate will be installed with the BarbershopBuilder.</p>
@@ -515,7 +544,7 @@
 
 <span class="c1">// Define DocumentTemplate in Spanish</span>
 <span class="k">val</span> <span class="py">recipientReceiptSmsDocumentTemplateES_US</span> <span class="p">=</span> <span class="n">DocumentTemplate</span><span class="p">(</span>
-  <span class="n">fields</span> <span class="p">=</span> <span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;sms_body&quot;</span> <span class="n">to</span> <span class="s">&quot;{{sender}} te envio {{amount}}&quot;</span><span class="p">),</span>
+  <span class="n">fields</span> <span class="p">=</span> <span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;sms_body&quot;</span> <span class="n">to</span> <span class="s">&quot;{{sender}} te envió {{amount}}&quot;</span><span class="p">),</span>
   <span class="c1">// ... same as EN_US</span>
   <span class="n">locale</span> <span class="p">=</span> <span class="n">Locale</span><span class="p">.</span><span class="n">ES_US</span>
 <span class="p">)</span>
@@ -610,12 +639,6 @@ BarberMoney(Money(50_00), EN_US)
  )
 </pre></div>
 
-<h2 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h2>
-<p>Our <a href="http://cashapp.github.io/barber/changelog/">change log</a> has release history.</p>
-<div class="codehilite"><pre><span></span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;app.cash.barber:barber:0.1.0&quot;</span><span class="p">)</span>
-</pre></div>
-
-<p>Snapshot builds are <a href="https://oss.sonatype.org/content/repositories/snapshots/">available</a>.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>Copyright 2019 Square, Inc.
 

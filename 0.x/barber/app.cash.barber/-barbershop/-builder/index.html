@@ -389,15 +389,19 @@
 </tr>
 <tr>
 <td><a href="install-document/">installDocument</a></td>
-<td><code>abstract fun installDocument(document:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="../../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;):</code><a href="./"><code>Builder</code></a><br>Prepares this barbershop to render instances of <a href="install-document/#app.cash.barber.Barbershop.Builder$installDocument(kotlin.reflect.KClass((app.cash.barber.models.Document)))/document">document</a>.</td>
+<td><code>abstract fun installDocument(document:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="../../../app.cash.barber.models/-document/"><code>Document</code></a><code>&gt;):</code><a href="./"><code>Barbershop.Builder</code></a><br>Prepares this barbershop to render instances of <a href="install-document/#app.cash.barber.Barbershop.Builder$installDocument(kotlin.reflect.KClass((app.cash.barber.models.Document)))/document">document</a>.</td>
 </tr>
 <tr>
 <td><a href="install-document-template/">installDocumentTemplate</a></td>
-<td><code>abstract fun installDocumentTemplate(documentDataClass:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="../../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>&gt;, documentTemplate:</code><a href="../../../app.cash.barber.models/-document-template/"><code>DocumentTemplate</code></a><code>):</code><a href="./"><code>Builder</code></a><br>Configures this barbershop so that instances of <a href="install-document-template/#app.cash.barber.Barbershop.Builder$installDocumentTemplate(kotlin.reflect.KClass((app.cash.barber.models.DocumentData)), app.cash.barber.models.DocumentTemplate)/documentDataClass">documentDataClass</a> will rendered by <a href="install-document-template/#app.cash.barber.Barbershop.Builder$installDocumentTemplate(kotlin.reflect.KClass((app.cash.barber.models.DocumentData)), app.cash.barber.models.DocumentTemplate)/documentTemplate">documentTemplate</a> for its target locale.</td>
+<td><code>abstract fun installDocumentTemplate(documentDataClass:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="../../../app.cash.barber.models/-document-data/"><code>DocumentData</code></a><code>&gt;, documentTemplate:</code><a href="../../../app.cash.barber.models/-document-template/"><code>DocumentTemplate</code></a><code>):</code><a href="./"><code>Barbershop.Builder</code></a><br>Configures this barbershop so that instances of <a href="install-document-template/#app.cash.barber.Barbershop.Builder$installDocumentTemplate(kotlin.reflect.KClass((app.cash.barber.models.DocumentData)), app.cash.barber.models.DocumentTemplate)/documentDataClass">documentDataClass</a> will rendered by <a href="install-document-template/#app.cash.barber.Barbershop.Builder$installDocumentTemplate(kotlin.reflect.KClass((app.cash.barber.models.DocumentData)), app.cash.barber.models.DocumentTemplate)/documentTemplate">documentTemplate</a> for its target locale.</td>
 </tr>
 <tr>
 <td><a href="set-locale-resolver/">setLocaleResolver</a></td>
-<td><code>abstract fun setLocaleResolver(resolver:</code><a href="../../-locale-resolver/"><code>LocaleResolver</code></a><code>):</code><a href="./"><code>Builder</code></a><br>Configures this barbershop to use <a href="../../-locale-resolver/">LocaleResolver</a> to map requested locales to available templates. By default Barber does an exact match, and if nothing matches it uses the first installed template.</td>
+<td><code>abstract fun setLocaleResolver(resolver:</code><a href="../../-locale-resolver/"><code>LocaleResolver</code></a><code>):</code><a href="./"><code>Barbershop.Builder</code></a><br>Configures this barbershop to use <a href="../../-locale-resolver/">LocaleResolver</a> to map requested locales to available templates. By default Barber does an exact match, and if nothing matches it uses the first installed template.</td>
+</tr>
+<tr>
+<td><a href="set-warnings-as-errors/">setWarningsAsErrors</a></td>
+<td><code>abstract fun setWarningsAsErrors():</code><a href="./"><code>Barbershop.Builder</code></a><br>Configures this barbershop to treat warnings as errors during validataion. By default, only errors, not warnings, lead to fatal BarberException during validation.</td>
 </tr>
 </tbody>
 </table>
@@ -412,7 +416,7 @@
 <tbody>
 <tr>
 <td><a href="../../-barbershop-builder/">BarbershopBuilder</a></td>
-<td><code>class BarbershopBuilder :</code><a href="./"><code>Builder</code></a></td>
+<td><code>class BarbershopBuilder :</code><a href="./"><code>Barbershop.Builder</code></a></td>
 </tr>
 </tbody>
 </table>
